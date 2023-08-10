@@ -42,9 +42,8 @@ public class OnlineLoader implements Loader {
 
             System.out.println("Характеристики фильма:");
 
-            String responseString = line.toString();
             ObjectMapper mapper = new ObjectMapper();
-            return mapper.readValue(responseString, Film.class);
+            return mapper.readValue(line, Film.class);
 
         } catch (IOException ex) {
             System.out.println("Ошибка запроса: " + ex.getMessage());
