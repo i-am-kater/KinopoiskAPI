@@ -38,10 +38,6 @@ public class OnlineLoader implements Loader {
 
             System.out.println("Загружаю фильм...");
 
-            System.out.println(line);
-
-            System.out.println("Характеристики фильма:");
-
             ObjectMapper mapper = new ObjectMapper();
             return mapper.readValue(line, Film.class);
 
