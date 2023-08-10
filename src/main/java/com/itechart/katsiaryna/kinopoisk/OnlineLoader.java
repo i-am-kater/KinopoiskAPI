@@ -42,7 +42,7 @@ public class OnlineLoader implements Loader {
 
             System.out.println("Характеристики фильма:");
 
-            String responseString = String.valueOf(line);
+            String responseString = line.toString();
             ObjectMapper mapper = new ObjectMapper();
             return mapper.readValue(responseString, Film.class);
 
