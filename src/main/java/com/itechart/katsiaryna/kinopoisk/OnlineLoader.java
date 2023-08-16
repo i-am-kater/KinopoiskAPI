@@ -37,12 +37,9 @@ public class OnlineLoader implements Loader {
 
             System.out.println("Загружаю фильм..");
 
-            System.out.println(line);
-
             ObjectMapper mapper = new ObjectMapper();
             Response response = mapper.readValue(line, Response.class);
             return response.getData();
-            //return mapper.readValue(line, Film.class);
 
         } catch (IOException ex) {
             System.out.println("Ошибка запроса: " + ex.getMessage());
