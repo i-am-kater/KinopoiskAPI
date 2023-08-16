@@ -26,7 +26,7 @@ public class FileLoader implements Loader {
                 String[] filmData = line.split(";");
                 String title = filmData[0].trim();
                 if (title.equalsIgnoreCase(movieName)) {
-                    return new Film(title, filmData[1].trim(), filmData[2].trim(), filmData[3].trim(), filmData[4].trim());
+                    return new Film(title, filmData[1].trim(), filmData[2].trim(), filmData[3].trim());
                 }
             }
         } catch (IOException ex) {

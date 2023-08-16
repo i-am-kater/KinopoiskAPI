@@ -3,6 +3,8 @@ package com.itechart.katsiaryna.kinopoisk;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.ArrayList;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Film {
     @JsonProperty("nameRu")
@@ -12,18 +14,17 @@ public class Film {
     @JsonProperty("filmLength")
     private String filmLength;
     @JsonProperty("genres")
-    private String genres;
+    private ArrayList genres;
     @JsonProperty("description")
     private String description;
 
     public Film() {
     }
 
-    public Film(String nameRu, String year, String filmLength, String genres, String description) {
+    public Film(String nameRu, String year, String filmLength, String description) {
         this.nameRu = nameRu;
         this.year = year;
         this.filmLength = filmLength;
-        this.genres = genres;
         this.description = description;
     }
 
@@ -37,10 +38,6 @@ public class Film {
 
     public String getFilmLength() {
         return filmLength;
-    }
-
-    public String getGenres() {
-        return genres;
     }
 
     public String getDescription() {
@@ -59,10 +56,6 @@ public class Film {
         this.filmLength = filmLength;
     }
 
-    public void setGenres(String genres) {
-        this.genres = genres;
-    }
-
     public void setDescription(String description) {
         this.description = description;
     }
@@ -72,7 +65,6 @@ public class Film {
         return "Название: " + nameRu + "\n" +
                 "Год выпуска: " + year + "\n" +
                 "Длительность фильма: " + filmLength + "\n" +
-                "Жанр: " + genres + "\n" +
                 "Описание фильма: " + description;
     }
 
