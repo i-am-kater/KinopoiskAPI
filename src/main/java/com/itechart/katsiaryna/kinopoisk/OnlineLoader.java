@@ -33,13 +33,16 @@ public class OnlineLoader implements Loader {
             conn.setRequestProperty("X-API-KEY", apiKey);
 
             reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-
             String line = reader.readLine();
 
             System.out.println("Загружаю фильм..");
 
+            System.out.println(line);
+
             ObjectMapper mapper = new ObjectMapper();
-            return mapper.readValue(line, Film.class);
+            Response response = mapper.readValue(line, Response.class);
+            return response.getData();
+            //return mapper.readValue(line, Film.class);
 
         } catch (IOException ex) {
             System.out.println("Ошибка запроса: " + ex.getMessage());
